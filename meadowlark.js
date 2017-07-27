@@ -1,3 +1,4 @@
+// функция находится в отдельном файле в папке lib
 var fortune = require('./lib/fortune.js');
 var express = require('express');
 var hbs = require("hbs");
@@ -9,14 +10,25 @@ app.set('port', process.env.PORT || 3000);
 
 // устанавливаем путь к каталогу с частичными представлениями
 hbs.registerPartials(__dirname + "/views/partials");
-//промежуточное ПО static
-app.use(express.static(__dirname + '/public'));
 
 app.set('view engine', 'hbs');
 
+//промежуточное ПО static
+app.use(express.static(__dirname + '/public'));
+
+
+app.use(function (req, res, next) {
+    res.locals.showTests = app.get('env') !== 'production' &&
+        req.query.test === '1';
+    next();
+});
+
 app.get("/", function (request, response) {
 
-    response.render("home.hbs", { fortune: fortune.getFortune() });
+    response.render("home.hbs", {
+        fortune: fortune.getFortune(),
+        pageTestScript: '/qa/tests-about.js'
+    });
 });
 
 app.get("/contact", function (request, response) {

@@ -13,8 +13,10 @@
     "pug": "^2.0.0-rc.2"
   },
   "devDependencies": {
+    "chai": "^4.1.0",
     "grunt": "^1.0.1",
-    "jasmine-node": "^1.14.5"
+    "jasmine-node": "^1.14.5",
+    "mocha": "^3.4.2"
   },
   "author": "Batura",
   "license": "ISC"
