@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>{{title}}</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+   .block1 { 
+    width: 200px; 
+    background: #ccc;
+    padding: 5px;
+    padding-right: 20px; 
+    border: solid 1px black; 
+    float: left;
+   }
+ 
+  </style>
+</head>
+<body>
+     {{> menu}}
+    <h1>{{title}}</h1>
+    <p>Электронный адрес: {{email}}</p>
+    <p>Телефон: {{phone}}</p>
+   <div class="block1"> {{> footer}} </div>
+</body>
+<html>
