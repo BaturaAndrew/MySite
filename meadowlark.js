@@ -26,8 +26,7 @@ app.use(function (req, res, next) {
 app.get("/", function (request, response) {
 
     response.render("home.hbs", {
-        fortune: fortune.getFortune(),
-        pageTestScript: '/qa/tests-about.js'
+        fortune: fortune.getFortune()
     });
 });
 
@@ -36,8 +35,22 @@ app.get("/contact", function (request, response) {
     response.render("contact.hbs", {
         title: "Мои контакты",
         email: "baturaandrew@gmail.com",
-        phone: "+375292637222"
+        phone: "+375292637222",
+        pageTestScript: '/qa/tests-about.js'
     });
+});
+app.get("/about", function (request, response) {
+
+    response.render("about.hbs", { layout: 'main', title: "О сайте", });
+});
+
+
+app.get('/tours/hood-river', function (req, res) {
+    res.render('tours/hood-river');
+});
+
+app.get('/tours/request-group-rate', function (req, res) {
+    res.render('tours/request-group-rate');
 });
 
 app.listen(app.get('port'), function () {

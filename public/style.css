@@ -61,7 +61,7 @@ a {
     background: #ccc;
     padding: 5px;
     padding-right: 0px; 
-    border: solid 1px black; 
+   /* border: solid 1px black;*/ 
 	float: left;
 	font: 12px "Lucida Grande", sans-serif;
 }

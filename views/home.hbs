@@ -4,6 +4,7 @@
 <head>
     <title>Главная страница</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/menu.css">
 
     <meta charset="utf-8" />
     <!-- условие для запуска теста-->
@@ -19,8 +20,6 @@
             {{> menu}}
             <h1>Главная страница</h1>
             <header><img src="/img/logo.jpg" alt="Логотип Meadowlark Travel"></header>
-
-
             <blockquote>{{fortune}}</blockquote>
         </div>
         <div class="footer">{{> footer}}</div>
@@ -34,7 +33,6 @@
     <script>
         mocha.ui('tdd');
         var assert = chai.assert;
-
     </script>
     <script src="/qa/tests-global.js"></script>
     {{#if pageTestScript}}
