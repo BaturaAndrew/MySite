@@ -7,16 +7,10 @@
   <link rel="stylesheet" href="/style.css">
   <link rel="stylesheet" href="/menu.css">
   <meta charset="utf-8" />
-  <style type="text/css">
-    .block1 {
-      width: 200px;
-      background: #ccc;
-      padding: 5px;
-      padding-right: 20px;
-      border: solid 1px black;
-      float: left;
-    }
-  </style>
+  <!-- условие для запуска теста-->
+  {{#if showTests}}
+  <link rel="stylesheet" href="/vendor/mocha.css"> {{/if}}
+  <script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
 </head>
 
 <body>
@@ -28,28 +22,27 @@
       <h2>{{title}}</h2>
       <p>Электронный адрес: {{email}}</p>
       <p>Телефон: {{phone}}</p>
-      <a href="/about">...</a>
+      <a href="/about">About</a>
     </div>
     <div class="footer">{{> footer}}</div>
 
   </div>
 
   {{#if showTests}}
-    <div id="mocha"></div>
-    <script src="/vendor/mocha.js"></script>
-    <script src="/vendor/chai.js"></script>
-    <script>
-        mocha.ui('tdd');
-        var assert = chai.assert;
-
-    </script>
-    <script src="/qa/tests-global.js"></script>
-    {{#if pageTestScript}}
-    <script src="{{pageTestScript}}"></script>
-    {{/if}}
-    <script>
+  <div id="mocha"></div>
+  <script src="/vendor/mocha.js"></script>
+  <script src="/vendor/chai.js"></script>
+  <script>
+    mocha.ui('tdd');
+    var assert = chai.assert;
+  </script>
+  <script src="/qa/tests-global.js"></script>
+  {{#if pageTestScript}}
+  <script src="{{pageTestScript}}"></script>
+  {{/if}}
+  <script>
         mocha.run();
-    </script>
-    {{/if}}
+  </script>
+  {{/if}}
 </body>
 <html>

@@ -5,7 +5,6 @@ var hbs = require("hbs");
 
 var app = express();
 
-fs = require('fs');
 app.set('port', process.env.PORT || 3000);
 
 // устанавливаем путь к каталогу с частичными представлениями
@@ -39,9 +38,16 @@ app.get("/contact", function (request, response) {
         pageTestScript: '/qa/tests-about.js'
     });
 });
+
 app.get("/about", function (request, response) {
 
-    response.render("about.hbs", { layout: 'main', title: "О сайте", });
+    response.render("about.hbs");
+});
+app.get('/400', function (req, res) {
+    res.render('400');
+});
+app.get('/500', function (req, res) {
+    res.render('500');
 });
 
 
@@ -57,3 +63,4 @@ app.listen(app.get('port'), function () {
     console.log('Express runed on http://localhost:' +
         app.get('port') + '; press Ctrl+C to complete.');
 });
+
