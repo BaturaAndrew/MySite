@@ -1,11 +1,7 @@
 //- contact.jade
-
 extends ./layouts/main.jade
-block title
- title!=title
+
 block content
- p Электронный адрес: 
-  p!= email 
- p Телефон:
-  p!= phone
+ p Электронный адрес:  #{ email }
+ p Телефон:  #{ phone}
  a( href="/about") About

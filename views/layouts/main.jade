@@ -4,28 +4,31 @@ doctype html
 html 
  include ../partials/head.jade
  body
+
   div.wrapper
+    div.main-headding
+     h3!= title
     div.content
       include ../partials/menu.jade
-      block title
-         h1!= title
+      
       header 
         img( src="/img/logo.jpg" alt="Логотип Meadowlark Travel")
       block content
-       h2 ШАБЛОН ДЛЯ ВСЕХ СТРАНИЦ
+       h2 Контент ДЛЯ ВСЕХ СТРАНИЦ
+       
     div.footer
      include ../partials/footer.jade
   
   
 if (showTests)
   div#mocha
-  script( src="/vendor/mocha.js")
-  script( src="/vendor/chai.js")
-  script mocha.ui('tdd'); var assert = chai.assert;
-  script( src="/qa/tests-global.js")
-  if (pageTestScript)
-     script( src="{{pageTestScript}}")
- script  mocha.run();
-   
-   
+   script( src="../../public/vendor/mocha.js")
+   script( src="../../public/vendor/chai.js")
+   script mocha.ui('tdd'); var assert = chai.assert;
+   script( src="../../public/qa/tests-global.js")
+    if (pageTestScript)
+      script( src="{{pageTestScript}}")
+    script  mocha.run();
+
+
   

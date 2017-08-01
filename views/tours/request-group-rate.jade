@@ -1,12 +1,17 @@
+//- request.jade
+extends ../layouts/main.jade
 
-    h1 Запрос цены для групп
-    form
-        input( type="hidden" name="referrer") 
-         p Название: 
-        input( type="text" id="fieldName" name="name")
-         br Размер группы:
-        input( type="text" name="groupSize") 
-         br Электронная почта:  
-         input( type="email" name="email")
-        input( type="submit" value="Submit")
-   
+block content
+   form( )
+        input( type="hidden", name="referrer")  
+        |Название: #[br]
+        input#fieldName( type="text", name="name") 
+        |#[br]
+        |Размер группы: #[br]
+        input( type="text", name="groupSize")  
+        |#[br]
+        |Электронная почта: #[br]  
+        input( type="email", name="email")
+        |#[br]
+        input( type="submit", value="Submit")
+
