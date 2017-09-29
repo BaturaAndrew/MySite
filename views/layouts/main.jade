@@ -7,14 +7,26 @@ html
 
   div.wrapper
     div.main-headding
-     h3!= title
+     h3.w3-xxlarge!= title
     div.content
       include ../partials/menu.jade
       
+
+    div.cont
       header 
         img( src="/img/logo.jpg" alt="Логотип Meadowlark Travel")
+      
+  
+    
       block content
        h2 Контент ДЛЯ ВСЕХ СТРАНИЦ
+         div.w3-half. w3-center. w3-xlarge( style="background:#b2c2bf")
+          p 
+           span.w3-tag. w3-xxlarge FREE
+          p.w3-xlarge. w3-wide 101
+           |#[br]
+           |TEMPLATES
+
        
     div.footer
      include ../partials/footer.jade

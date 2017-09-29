@@ -5,6 +5,7 @@ var app = express();
 
 app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'jade');
+app.set('view cache', true);
 //промежуточное ПО static
 app.use(express.static(__dirname + '/public'));
 app.use(function (req, res, next) {
@@ -34,6 +35,7 @@ app.get("/contact", function (request, response) {
 app.get("/about", function (request, response) {
     response.render("about.jade",
         { title: "Common informaition" });
+
 });
 app.get('/400', function (req, res) {
     res.render('400.jade');
@@ -51,6 +53,15 @@ app.get('/tours/request-group-rate', function (req, res) {
     res.render('tours/request-group-rate',
         { title: "Групповой тур" });
 });
+
+app.get('/headers', function (req, res) {
+    res.set('Content-Type', 'text/plain');
+
+    var s1 = req.ip;
+    res.send(s1);
+});
+
+
 
 app.listen(app.get('port'), function () {
     console.log('Express runed on http://localhost:' +

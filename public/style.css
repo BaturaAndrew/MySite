@@ -12,12 +12,14 @@ body {
 	width: 750px;
 	height: 100%;
 	margin: 0 auto;
-	background: #F5F7FA;
+	background: #f0efef;
 	font: 14px/20px Arial, sans-serif;
 }
 .content {
 	flex: 1 0 auto;
+	background: #eaece5;
 }
+
 h1 {
 	padding: 40px 20px 30px;
 	font: 26px/1.3 Arial, sans-serif;
@@ -38,9 +40,8 @@ a {
 .footer {
 	flex: 0 0 auto;
 	height: 30px;
-	/* background: #3498DB;
-	  width: 200px; */
-    background: #ccc;
+	 background: #3b3a30;
+	/*  width: 200px; */
     padding: 5px;
     padding-right: 0px; 
    /* border: solid 1px black;*/ 
@@ -51,6 +52,7 @@ a {
 	padding: 10px 20px 10px;
 	font: 30px "KELT";
 	text-align: center;
+	background: 	#b2c2bf;
 }
 
 .dva {
@@ -84,4 +86,4 @@ a {
         font-size:5em;
         text-transform: uppercase;
         color: #fff;
-        text-shadow: 10px 10px 0 #ffd217, 20px 20px 0 #5ac7ff, 30px 30px 0 #ffd217, 40px 40px 0 #5ac7ff;}
+				text-shadow: 10px 10px 0 #ffd217, 20px 20px 0 #5ac7ff, 30px 30px 0 #ffd217, 40px 40px 0 #5ac7ff;}
